@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
   char mensagem[10]; 
-  int num; 
+  int num = 0; 
   char* m = mensagem;
   char s1, s2;
   char novamen[10];
@@ -23,11 +23,19 @@ int main() {
   m2=&s2; 
 
   for(m=mensagem; *m!='\0'; m++){
+        if(*m==s1){
+          m2=m;
+        }
         cout << *m;
-       /* if(mensagem[i]==s1){
-          m=&mensagem[i];
-        }*/
+  }
 
+  cout << endl; 
+
+    for(m2=mensagem; *m2!='\0'; m2++){
+        if(*m2==s1){
+          *m2=s2;
+        }
+        cout << *m2;
   }
 
 }
